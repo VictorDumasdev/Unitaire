@@ -1,0 +1,13 @@
+<?php
+
+namespace App\Tests\Search;
+
+use PHPUnit\Framework\TestCase;
+
+class AdherentSearchTest extends TestCase
+{
+    public function testSomething(): void
+    {
+        $this->assertTrue(true);
+    }
+}
