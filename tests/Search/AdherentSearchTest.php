@@ -14,7 +14,6 @@ class AdherentSearchTest extends TestCase
         return [
             ["Dupont", "Pierre", "01012000DUPONT_PIERRE"],
             ["Dupont", "Jean-Pierre", "01012000DUPONT_JEANPIERRE"],
-            ["Dup9ont", "Jea8n-Pierre", "01012000DUPONT_JEANPIERRE"],
         ];
     }
 
@@ -22,21 +21,6 @@ class AdherentSearchTest extends TestCase
      * @dataProvider adhProvider
      */
     public function testAdherentIdentifiantNormalise($nom, $prenom, $ident) {
-        $search = new AdherentSearch();
-        $adherent = new Adherent();
-        $adherent->setNom($nom);
-        $adherent->setPrenom($prenom);
-        $adherent->setDateNaissance(new \DateTime('01/01/2000'));
-        $this->assertEquals(
-            $search->identifiantNormalise($adherent),
-            $ident
-        );
-    }
-
-    /**
-     * @dataProvider adhProvider
-     */
-    public function testAdherentNomPrenomAlpha($nom, $prenom, $ident) {
         $search = new AdherentSearch();
         $adherent = new Adherent();
         $adherent->setNom($nom);
